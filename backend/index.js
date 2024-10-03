@@ -15,6 +15,19 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>{
 
 app.use('/api/user',userRoute)
 app.use('/api/signup',authRoute)
+ 
+app.use((err,req,res,next)=>{
+    const statusCode=err.statusCode||500;
+    const message =err.message||'internal server error'
+    return res.status(statusCode).json({
+        success:false,
+      message,
+        statusCode:statusCode,
+
+    })
+})
+
+
 app.listen(3000,()=>{
    
         console.log("server started on 3000");
