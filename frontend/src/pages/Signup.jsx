@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { useState} from 'react';
+
 const Signup = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,7 @@ setFormData({...formData,[e.target.id]:e.target.value})
     try {
       setLoading(true);
       setError(false);
-      const res = await fetch('/api/auth/', {
+      const res = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +69,7 @@ setFormData({...formData,[e.target.id]:e.target.value})
         >
      {loading ? 'Loading...' : 'Sign Up'}
         </button>
-    
+  
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Have an account?</p>
