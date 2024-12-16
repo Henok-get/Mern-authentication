@@ -6,3 +6,10 @@ Backend (Node.js & Express)
     1.User registration with hashed passwords (using bcrypt).
     2.Secure authentication using JWT.
     3.Protected routes accessible only by authenticated users.
+
+ Frontend (React.js)
+    Frontend Features
+
+    1.Registration form.
+    2.Login form.
+    3.Display protected content only for authenticated users. 
